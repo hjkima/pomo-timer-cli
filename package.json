@@ -1,0 +1,15 @@
+{
+  "name": "pomo-cli",
+  "version": "1.0.0",
+  "description": "Claude Code에서 자연어로 트리거하는 포모도로 타이머",
+  "bin": {
+    "pomo": "./index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "chalk": "^4.1.2",
+    "commander": "^11.0.0",
+    "dayjs": "^1.11.10",
+    "node-notifier": "^10.0.1"
+  }
+}
