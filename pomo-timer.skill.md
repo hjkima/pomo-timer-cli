@@ -1,34 +1,34 @@
 ---
-description: 포모도로 타이머 시작/조회. 사용자 메시지에 "뽀모도로", "타이머", "뽀모도로 타이머" 포함 시 사용.
+description: Pomodoro timer — start or check session logs. Use when the user's message includes "pomodoro", "timer", "focus session", or "pomo".
 ---
 
-pomo CLI를 사용해서 포모도로 타이머를 실행합니다.
+Use the pomo CLI to run a pomodoro timer.
 
-## CLI 커맨드
+## CLI Commands
 
 ```bash
-pomo start "작업명" -t [분]              # 단일 세션 (기본 25분)
-pomo set "작업명" -t [work분] -s [break분]  # 세트: work+break 자동 진행 (기본 25+5분)
-pomo log                                 # 오늘 로그
-pomo log --all                           # 전체 로그
-pomo clear                               # 로그 삭제
+pomo start "task" -t [min]             # Single session (default 25 min)
+pomo set "task" -t [work_min] -s [break_min]  # Set: work + break auto-progression (default 25+5)
+pomo log                               # Today's log
+pomo log --all                         # All logs
+pomo clear                             # Clear logs
 ```
 
-## 자연어 → 커맨드 변환 규칙
+## Natural Language → Command Rules
 
-- **작업명**: 사용자가 언급한 작업. 없으면 `"unnamed"`
-- **모드**: "세트", "work+break", "풀로" → `set` / "단일", "하나만" → `single` / 불명확하면 물어볼 것
-- **시간**: 숫자 언급 시 추출. 없으면 기본값 사용
-- **로그 요청**: "오늘", "얼마나", "기록", "집중 시간" → `pomo log`
+- **task**: what the user mentioned. Default: `"unnamed"`
+- **mode**: "set", "work and break", "full" → `set` / "single", "just one" → `single` / if unclear, ask
+- **duration**: extract any number mentioned. Use defaults if not specified
+- **log request**: "today", "how much", "log", "focus time" → `pomo log`
 
-## 변환 예시
+## Examples
 
-| 사용자 입력 | 실행 커맨드 |
+| User input | Command |
 |---|---|
-| "자소서 타이머 켜줘" | 모드 불명확 → 물어볼 것 |
-| "자소서 단일 세션 켜줘" | `pomo start "자소서"` |
-| "자소서 세트로 켜줘" | `pomo set "자소서"` |
-| "30분짜리 세트 켜줘" | `pomo set "unnamed" -t 30` |
-| "자소서 40분 work 10분 break" | `pomo set "자소서" -t 40 -s 10` |
-| "오늘 집중 시간 얼마야?" | `pomo log` |
-| "전체 기록 보여줘" | `pomo log --all` |
+| "Start a timer for my report" | mode unclear → ask |
+| "Single session for my report" | `pomo start "report"` |
+| "Set for my report" | `pomo set "report"` |
+| "30 minute set" | `pomo set "unnamed" -t 30` |
+| "40 min work, 10 min break for report" | `pomo set "report" -t 40 -s 10` |
+| "How much did I focus today?" | `pomo log` |
+| "Show all logs" | `pomo log --all` |
