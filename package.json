@@ -1,10 +1,13 @@
 {
-  "name": "pomo-cli",
+  "name": "pomodoro-cli",
   "version": "1.0.0",
-  "description": "Claude Code에서 자연어로 트리거하는 포모도로 타이머",
+  "description": "Pomodoro timer CLI for Claude Code",
   "bin": {
     "pomo": "./index.js"
   },
+  "files": [
+    "index.js"
+  ],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
     "chalk": "^4.1.2",
