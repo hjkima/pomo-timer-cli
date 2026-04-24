@@ -1,5 +1,5 @@
 {
-  "name": "pomodoro-cli",
+  "name": "pomo-timer-cli",
   "version": "1.0.0",
   "description": "Pomodoro timer CLI for Claude Code",
   "bin": {

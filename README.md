@@ -1,43 +1,43 @@
-# pomodoro-cli
+# pomo-timer-cli
 
-Claude Code에서 자연어로 트리거하는 포모도로 타이머 CLI.
+Pomodoro timer CLI for Claude Code. Trigger timers with natural language — no screen switching, just Mac/Windows notifications.
 
-## 설치
-
-```bash
-npm install -g pomodoro-cli
-```
-
-## Claude Code skill 등록
-
-`~/.claude/skills/pomo.md` 파일을 추가하면 Claude Code에서 자연어로 사용 가능합니다.
+## Installation
 
 ```bash
-curl -o ~/.claude/skills/pomo.md \
-  https://raw.githubusercontent.com/hjkima/pomodoro/main/pomo.skill.md
+npm install -g pomo-timer-cli
 ```
 
-등록 후 Claude Code에서:
+## Claude Code Skill Setup
 
-```
-"자소서 작업 타이머 켜줘"
-"30분짜리 세트로 켜줘"
-"오늘 집중 시간 얼마야?"
-```
-
-## CLI 직접 사용
+Add the skill file to enable natural language triggers in Claude Code:
 
 ```bash
-pomo start "작업명"              # 단일 세션 (기본 25분)
-pomo start "작업명" -t 45        # 커스텀 시간
-pomo set "작업명"                # 세트 (25분 work + 5분 break)
-pomo set "작업명" -t 30 -s 10    # 커스텀 세트
-pomo log                         # 오늘 로그
-pomo log --all                   # 전체 로그
-pomo clear                       # 로그 삭제
+curl -o ~/.claude/skills/pomo-timer.md \
+  https://raw.githubusercontent.com/hjkima/pomo-timer-cli/main/pomo-timer.skill.md
 ```
 
-## 요구사항
+Then just talk to Claude Code:
 
-- Node.js 18 이상
-- Mac OS 또는 Windows
+```
+"Start a pomodoro timer for my resume"
+"Set a 30-minute work session"
+"How much did I focus today?"
+```
+
+## CLI Usage
+
+```bash
+pomo start "task"              # Single session (default 25 min)
+pomo start "task" -t 45        # Custom duration
+pomo set "task"                # Set: 25 min work + 5 min break (auto)
+pomo set "task" -t 30 -s 10    # Custom set
+pomo log                       # Today's log
+pomo log --all                 # All logs
+pomo clear                     # Clear logs
+```
+
+## Requirements
+
+- Node.js 18+
+- macOS or Windows
