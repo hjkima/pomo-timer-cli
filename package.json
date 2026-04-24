@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "Pomodoro timer CLI for Claude Code",
   "bin": {
-    "pomo": "./index.js"
+    "pomo": "index.js"
   },
   "files": [
     "index.js"
   ],
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.29.0",
     "chalk": "^4.1.2",
     "commander": "^11.0.0",
     "dayjs": "^1.11.10",
