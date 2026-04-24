@@ -5,7 +5,10 @@ Pomodoro timer CLI for Claude Code. Trigger timers with natural language — no 
 ## Installation
 
 ```bash
-npm install -g pomo-timer-cli
+git clone https://github.com/hjkima/pomo-timer-cli
+cd pomo-timer-cli
+npm install
+npm link
 ```
 
 ## Claude Code Skill Setup
